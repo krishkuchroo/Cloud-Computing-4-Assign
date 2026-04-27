@@ -1,0 +1,36 @@
+version: 0.2
+
+# Frontend pipeline (P2): generate config.js from CFN outputs + APIGW key,
+# then sync front-end/ to the B1 static-hosting bucket.
+
+env:
+  variables:
+    STACK_NAME: cc-photos-stack
+    FRONTEND_BUCKET: cc-photos-frontend-746140163942
+    PHOTOS_BUCKET: cc-photos-storage-746140163942
+    REGION: us-east-1
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.12
+  pre_build:
+    commands:
+      - API_INVOKE_URL=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" --region "$REGION" --query "Stacks[0].Outputs[?OutputKey=='ApiInvokeUrl'].OutputValue" --output text)
+      - API_KEY_ID=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" --region "$REGION" --query "Stacks[0].Outputs[?OutputKey=='ApiKeyId'].OutputValue" --output text)
+      - API_KEY_VALUE=$(aws apigateway get-api-key --api-key "$API_KEY_ID" --include-value --region "$REGION" --query value --output text)
+      - |
+        cat > front-end/config.js <<EOF
+        window.CC_PHOTOS_CONFIG = {
+          apiBaseUrl: "${API_INVOKE_URL}",
+          apiKey: "${API_KEY_VALUE}",
+          photosBucket: "${PHOTOS_BUCKET}",
+        };
+        EOF
+  build:
+    commands:
+      - aws s3 sync front-end/ "s3://${FRONTEND_BUCKET}/" --delete --exclude "config.example.js" --exclude ".DS_Store"
+
+artifacts:
+  files:
+    - front-end/**/*

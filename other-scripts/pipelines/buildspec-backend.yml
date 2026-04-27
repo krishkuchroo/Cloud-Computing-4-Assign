@@ -1,0 +1,24 @@
+version: 0.2
+
+# CodeBuild spec for the backend pipeline (P1).
+# Builds both Lambda zips and pushes them via aws lambda update-function-code.
+# Triggered by GitHub source action in CodePipeline.
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.12
+    commands:
+      - pip install --quiet --upgrade pip
+  build:
+    commands:
+      - bash other-scripts/scripts/build_lambdas.sh
+  post_build:
+    commands:
+      - aws lambda update-function-code --function-name index-photos  --zip-file fileb://dist/index_photos.zip
+      - aws lambda update-function-code --function-name search-photos --zip-file fileb://dist/search_photos.zip
+
+artifacts:
+  files:
+    - dist/index_photos.zip
+    - dist/search_photos.zip

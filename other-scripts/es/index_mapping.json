@@ -1,0 +1,14 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0
+  },
+  "mappings": {
+    "properties": {
+      "objectKey":        { "type": "keyword" },
+      "bucket":           { "type": "keyword" },
+      "createdTimestamp": { "type": "date" },
+      "labels":           { "type": "keyword" }
+    }
+  }
+}

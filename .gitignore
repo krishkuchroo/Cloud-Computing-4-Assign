@@ -1,0 +1,24 @@
+# Local secrets
+front-end/config.js
+
+# Build artifacts
+dist/
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editors
+.vscode/
+.idea/
+.DS_Store
+
+# Generated SDK is committed so CodePipeline can deploy it
+# (regen with `aws apigateway get-sdk ...` — see README)
+
+# Local AWS scratch
+.aws-sam/
+samconfig.toml

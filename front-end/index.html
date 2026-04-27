@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>cc-photos &mdash; Photo Album Search</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>cc-photos</h1>
+    <p>Natural-language photo search. Upload, then search.</p>
+  </header>
+
+  <section id="search">
+    <h2>Search</h2>
+    <form id="search-form">
+      <input id="q" type="text" placeholder="show me dogs and cats" autocomplete="off" required />
+      <button type="submit">Search</button>
+    </form>
+    <div id="status-search" class="status"></div>
+    <div id="results" class="grid"></div>
+  </section>
+
+  <section id="upload">
+    <h2>Upload</h2>
+    <form id="upload-form">
+      <input id="file" type="file" accept="image/jpeg,image/png" required />
+      <input id="custom-labels" type="text" placeholder="Custom labels (comma-separated, optional)" />
+      <button type="submit">Upload</button>
+    </form>
+    <div id="status-upload" class="status"></div>
+  </section>
+
+  <footer>
+    <p>NYU Cloud Computing Spring 2026 &mdash; Assignment 3</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
