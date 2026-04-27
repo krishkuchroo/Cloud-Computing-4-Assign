@@ -29,12 +29,29 @@
       <input id="custom-labels" type="text" placeholder="Custom labels (comma-separated, optional)" />
       <button type="submit">Upload</button>
     </form>
+    <progress id="upload-progress" value="0" max="100" hidden></progress>
     <div id="status-upload" class="status"></div>
   </section>
 
   <footer>
     <p>NYU Cloud Computing Spring 2026 &mdash; Assignment 3</p>
   </footer>
+
+  <!--
+    API Gateway-generated SDK (SDK1). Order matters: crypto + url-template +
+    apiGatewayCore must load before apigClient.
+  -->
+  <script src="sdk/lib/axios/dist/axios.standalone.js"></script>
+  <script src="sdk/lib/CryptoJS/rollups/crypto-js.js"></script>
+  <script src="sdk/lib/CryptoJS/rollups/sha256.js"></script>
+  <script src="sdk/lib/CryptoJS/components/hmac.js"></script>
+  <script src="sdk/lib/CryptoJS/components/enc-base64.js"></script>
+  <script src="sdk/lib/url-template/url-template.js"></script>
+  <script src="sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+  <script src="sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+  <script src="sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+  <script src="sdk/lib/apiGatewayCore/utils.js"></script>
+  <script src="sdk/apigClient.js"></script>
 
   <script src="config.js"></script>
   <script src="app.js"></script>

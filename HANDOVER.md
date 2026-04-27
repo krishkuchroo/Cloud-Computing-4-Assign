@@ -28,11 +28,11 @@ These are out of T1 scope per the assignment. If the stack is deleted, these sur
 
 | Resource | Identifier | How it was made |
 |---|---|---|
-| OpenSearch domain `photos` | endpoint: `<fill in after provision>` | Console → OpenSearch → Create domain. t3.small.search, 1 node, single AZ, 10GB gp3. Fine-grained access OFF, IAM-based access policy attached. |
-| Lex V2 bot `cc-photos-search-bot` | bot ID: `<fill in>`, alias ID: `<fill in>` | Console → Lex V2 → Import → upload `other-scripts/lex/SearchIntent_export.json` |
-| API Key `cc-photos-key` | key ID: `<fill in>`, value: `<fill in>` | Console → APIGW → API Keys → Create. Attach to usage plan `cc-photos-usage-plan` linked to stage `prod`. |
-| GitHub OAuth connection | CodeStar connection ARN: `<fill in>` | Console → Developer Tools → Connections → Create connection → GitHub. Authorize once. |
-| Two CodePipelines | `cc-photos-backend-pipeline`, `cc-photos-frontend-pipeline` | Created via console using buildspecs in `pipelines/`. Source: GitHub via CodeStar connection above. |
+| OpenSearch domain `photos` | `https://search-photos-dhbzsy6k4xwqmfkozq7j2rjgkq.us-east-1.es.amazonaws.com` | `bash other-scripts/scripts/provision_opensearch.sh` then `bash other-scripts/scripts/create_es_index.sh` (now idempotent: re-running adds `labels.text` sub-field + reindexes). |
+| Lex V2 bot `cc-photos-search-bot` | bot ID: `T4DPQ3XVUE`, alias ID: `UJABDDPGRP` | `python3 other-scripts/scripts/create_lex_bot.py`. Live bot definition is exported to `other-scripts/lex/SearchIntent_export.json` (regenerated on every grading session). |
+| API Key `cc-photos-key` | key ID: `9ybes6n6ik`. Value retrieved via `aws apigateway get-api-key --api-key 9ybes6n6ik --include-value --query value --output text`. | Created automatically by CFN stack. Attached to usage plan `cc-photos-usage-plan` on stage `prod`. |
+| GitHub OAuth connection | `arn:aws:codeconnections:us-east-1:746140163942:connection/fdd78895-3be5-4802-922d-f5d36983fc46` (status `AVAILABLE`) | Created via Console once; can be re-authorized in the same place. |
+| Two CodePipelines | `cc-photos-backend-pipeline`, `cc-photos-frontend-pipeline` | `CONNECTION_ARN=… GH_OWNER=… GH_REPO=… bash other-scripts/scripts/setup_pipelines.sh` (idempotent). Source: GitHub via the connection above. |
 
 ## Stack outputs (live as of 2026-04-26)
 - Frontend URL: `http://cc-photos-frontend-746140163942.s3-website-us-east-1.amazonaws.com`
@@ -58,7 +58,9 @@ These are out of T1 scope per the assignment. If the stack is deleted, these sur
 4. To redeploy a Lambda quickly without waiting for the pipeline: `bash scripts/quick_deploy_lambda.sh index-photos`
 
 ## Known issues / WIP
-- (populated as we hit them)
+- LF1 currently filters on `Content-Type` starting with `image/jpeg|jpg|png` only — Rekognition's supported set. Other image MIME types (`image/heic`, `image/webp`, `image/gif`) are rejected at index time with `event=skipped_non_image`. Acceptable per the assignment scope (the upload form is restricted to JPEG/PNG anyway).
+- The fallback tokenizer in LF2 is gated behind `STRICT_LEX=0` (off by default — spec wants empty array on no Lex slots). Flip the env var to re-enable for debugging.
+- After re-deploying CFN with `LambdaCodeBucket` empty, run `bash other-scripts/scripts/deploy_lambdas.sh` to push the real code on top of the placeholder. Otherwise the placeholder Lambda answers all PUT events with a no-op.
 
 ## Demo script (for grading session)
 1. Open frontend URL.
