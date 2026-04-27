@@ -22,3 +22,6 @@ venv/
 # Local AWS scratch
 .aws-sam/
 samconfig.toml
+
+# Test fixtures (only used locally for smoke tests)
+test-fixtures/
