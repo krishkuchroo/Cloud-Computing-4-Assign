@@ -26,8 +26,8 @@ scripts/                provision.sh, teardown.sh — manual steps automated
 docs/                   ARCHITECTURE.md, ACCEPTANCE.md, IAM_ARNS.md
 ```
 
-## Status (2026-04-26 evening)
-End-to-end working in AWS. Live values in `HANDOVER.md`. Outstanding: GitHub repos + CodePipelines (deferred — `other-scripts/scripts/setup_pipelines.sh` is parameterized and ready), demo screenshots, final submission zip.
+## Status (2026-04-27 evening)
+End-to-end working in AWS, plus all gap-fix work from the 2026-04-27 audit landed: per-record error isolation in LF1, DLQ for LF1, content-type / zero-byte filtering, lower MIN_CONFIDENCE (50), 200-on-error in LF2, multi-word label coverage via `labels.text` sub-field + bool-OR query, generated SDK integrated in front-end, drift-proof Lambda code via CFN parameters, full IAM_ARNS.md, Lex export written, submission script. Outstanding: trigger first run of P1/P2 (pipelines themselves are scripted and ready), final demo screenshots.
 
 ## Plan in flight
 Plan B (three parallel tracks): Backend, Frontend, Infra. See `CONTRACTS.md` §1–9 for the locked interfaces between them.

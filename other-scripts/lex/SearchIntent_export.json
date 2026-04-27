@@ -1,0 +1,475 @@
+{
+  "bot": {
+    "ResponseMetadata": {
+      "RequestId": "b59c8f56-3f2d-4ed2-b348-25b7e981fcda",
+      "HTTPStatusCode": 200,
+      "HTTPHeaders": {
+        "date": "Mon, 27 Apr 2026 21:31:50 GMT",
+        "content-type": "application/x-amz-json-1.1",
+        "content-length": "424",
+        "connection": "keep-alive",
+        "x-amzn-requestid": "b59c8f56-3f2d-4ed2-b348-25b7e981fcda",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-amz-apigw-id": "cf5W_FbkIAMEH5g=",
+        "x-content-type-options": "nosniff",
+        "x-amzn-trace-id": "Root=1-69efd5c5-6fecb1b534fbd44263c0afb0"
+      },
+      "RetryAttempts": 0
+    },
+    "botId": "T4DPQ3XVUE",
+    "botName": "cc-photos-search-bot",
+    "description": "Search disambiguation for cc-photos",
+    "roleArn": "arn:aws:iam::746140163942:role/cc-photos-lex-runtime-role",
+    "dataPrivacy": {
+      "childDirected": false
+    },
+    "idleSessionTTLInSeconds": 300,
+    "botStatus": "Available",
+    "creationDateTime": "2026-04-26 18:57:00.347000-04:00",
+    "lastUpdatedDateTime": "2026-04-26 18:57:43.143000-04:00",
+    "botType": "Bot"
+  },
+  "locale": {
+    "ResponseMetadata": {
+      "RequestId": "7604cdcb-4a3f-4153-b024-4b4429fa26e6",
+      "HTTPStatusCode": 200,
+      "HTTPHeaders": {
+        "date": "Mon, 27 Apr 2026 21:31:50 GMT",
+        "content-type": "application/x-amz-json-1.1",
+        "content-length": "653",
+        "connection": "keep-alive",
+        "x-amzn-requestid": "7604cdcb-4a3f-4153-b024-4b4429fa26e6",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-amz-apigw-id": "cf5XBHaHIAMEE4A=",
+        "x-content-type-options": "nosniff",
+        "x-amzn-trace-id": "Root=1-69efd5c6-357525ac0a3d65072c0750ac"
+      },
+      "RetryAttempts": 0
+    },
+    "botId": "T4DPQ3XVUE",
+    "botVersion": "DRAFT",
+    "localeId": "en_US",
+    "localeName": "English (US)",
+    "nluIntentConfidenceThreshold": 0.4,
+    "intentsCount": 2,
+    "slotTypesCount": 0,
+    "botLocaleStatus": "Built",
+    "creationDateTime": "2026-04-26 18:57:04.675000-04:00",
+    "lastUpdatedDateTime": "2026-04-26 18:57:42.550000-04:00",
+    "lastBuildSubmittedDateTime": "2026-04-26 18:58:27.979000-04:00",
+    "botLocaleHistoryEvents": [
+      {
+        "event": "Included in V1 from DRAFT",
+        "eventDate": "2026-04-26 18:57:42.550000-04:00"
+      }
+    ],
+    "speechDetectionSensitivity": "Default"
+  },
+  "intents": [
+    {
+      "ResponseMetadata": {
+        "RequestId": "c1bc8d81-c3bc-45cb-ab21-6690f7f3dcca",
+        "HTTPStatusCode": 200,
+        "HTTPHeaders": {
+          "date": "Mon, 27 Apr 2026 21:31:50 GMT",
+          "content-type": "application/x-amz-json-1.1",
+          "content-length": "1662",
+          "connection": "keep-alive",
+          "x-amzn-requestid": "c1bc8d81-c3bc-45cb-ab21-6690f7f3dcca",
+          "strict-transport-security": "max-age=31536000; includeSubDomains",
+          "x-amz-apigw-id": "cf5XDE6fIAMEJJw=",
+          "x-content-type-options": "nosniff",
+          "x-amzn-trace-id": "Root=1-69efd5c6-0d16fa81657ef7d53b6549de"
+        },
+        "RetryAttempts": 0
+      },
+      "intentId": "FALLBCKINT",
+      "intentName": "FallbackIntent",
+      "description": "Default intent when no other intent matches",
+      "parentIntentSignature": "AMAZON.FallbackIntent",
+      "botId": "T4DPQ3XVUE",
+      "botVersion": "DRAFT",
+      "localeId": "en_US",
+      "creationDateTime": "2026-04-26 18:57:05.459000-04:00",
+      "lastUpdatedDateTime": "2026-04-26 18:57:05.459000-04:00",
+      "initialResponseSetting": {
+        "nextStep": {
+          "dialogAction": {
+            "type": "InvokeDialogCodeHook"
+          }
+        },
+        "codeHook": {
+          "enableCodeHookInvocation": true,
+          "active": true,
+          "postCodeHookSpecification": {
+            "successNextStep": {
+              "dialogAction": {
+                "type": "EndConversation"
+              }
+            },
+            "failureNextStep": {
+              "dialogAction": {
+                "type": "EndConversation"
+              }
+            },
+            "timeoutNextStep": {
+              "dialogAction": {
+                "type": "EndConversation"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "ResponseMetadata": {
+        "RequestId": "2bcd6c00-8601-4375-ad09-a6ea94b6aa26",
+        "HTTPStatusCode": 200,
+        "HTTPHeaders": {
+          "date": "Mon, 27 Apr 2026 21:31:50 GMT",
+          "content-type": "application/x-amz-json-1.1",
+          "content-length": "2766",
+          "connection": "keep-alive",
+          "x-amzn-requestid": "2bcd6c00-8601-4375-ad09-a6ea94b6aa26",
+          "strict-transport-security": "max-age=31536000; includeSubDomains",
+          "x-amz-apigw-id": "cf5XFFMoIAMEM1Q=",
+          "x-content-type-options": "nosniff",
+          "x-amzn-trace-id": "Root=1-69efd5c6-168b785b751fa1197ea11156"
+        },
+        "RetryAttempts": 0
+      },
+      "intentId": "JSTOQUCRS6",
+      "intentName": "SearchIntent",
+      "sampleUtterances": [
+        {
+          "utterance": "{keyword1}"
+        },
+        {
+          "utterance": "{keyword1} and {keyword2}"
+        },
+        {
+          "utterance": "show me {keyword1}"
+        },
+        {
+          "utterance": "show me {keyword1} and {keyword2}"
+        },
+        {
+          "utterance": "find {keyword1}"
+        },
+        {
+          "utterance": "find {keyword1} and {keyword2}"
+        },
+        {
+          "utterance": "photos of {keyword1}"
+        },
+        {
+          "utterance": "photos of {keyword1} and {keyword2}"
+        },
+        {
+          "utterance": "show me photos with {keyword1} and {keyword2} in them"
+        },
+        {
+          "utterance": "search for {keyword1}"
+        }
+      ],
+      "fulfillmentCodeHook": {
+        "enabled": false,
+        "postFulfillmentStatusSpecification": {
+          "successNextStep": {
+            "dialogAction": {
+              "type": "EndConversation"
+            }
+          },
+          "failureNextStep": {
+            "dialogAction": {
+              "type": "EndConversation"
+            }
+          },
+          "timeoutNextStep": {
+            "dialogAction": {
+              "type": "EndConversation"
+            }
+          }
+        }
+      },
+      "slotPriorities": [
+        {
+          "priority": 1,
+          "slotId": "PYCQYFV3EL"
+        },
+        {
+          "priority": 2,
+          "slotId": "IK8NO5WR0C"
+        }
+      ],
+      "botId": "T4DPQ3XVUE",
+      "botVersion": "DRAFT",
+      "localeId": "en_US",
+      "creationDateTime": "2026-04-26 18:57:09.076000-04:00",
+      "lastUpdatedDateTime": "2026-04-26 18:58:27.737000-04:00",
+      "initialResponseSetting": {
+        "nextStep": {
+          "dialogAction": {
+            "type": "InvokeDialogCodeHook"
+          }
+        },
+        "codeHook": {
+          "enableCodeHookInvocation": true,
+          "active": true,
+          "postCodeHookSpecification": {
+            "successNextStep": {
+              "dialogAction": {
+                "type": "FulfillIntent"
+              }
+            },
+            "failureNextStep": {
+              "dialogAction": {
+                "type": "EndConversation"
+              }
+            },
+            "timeoutNextStep": {
+              "dialogAction": {
+                "type": "EndConversation"
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "slots_by_intent": {
+    "FallbackIntent": [],
+    "SearchIntent": [
+      {
+        "ResponseMetadata": {
+          "RequestId": "7800cb13-d248-4cc3-b59a-3e6f3228074e",
+          "HTTPStatusCode": 200,
+          "HTTPHeaders": {
+            "date": "Mon, 27 Apr 2026 21:31:50 GMT",
+            "content-type": "application/x-amz-json-1.1",
+            "content-length": "1756",
+            "connection": "keep-alive",
+            "x-amzn-requestid": "7800cb13-d248-4cc3-b59a-3e6f3228074e",
+            "strict-transport-security": "max-age=31536000; includeSubDomains",
+            "x-amz-apigw-id": "cf5XHEQcoAMEOWw=",
+            "x-content-type-options": "nosniff",
+            "x-amzn-trace-id": "Root=1-69efd5c6-407461c012f32b794a58119a"
+          },
+          "RetryAttempts": 0
+        },
+        "slotId": "IK8NO5WR0C",
+        "slotName": "keyword2",
+        "slotTypeId": "AMAZON.AlphaNumeric",
+        "valueElicitationSetting": {
+          "slotConstraint": "Optional",
+          "promptSpecification": {
+            "messageGroups": [
+              {
+                "message": {
+                  "plainTextMessage": {
+                    "value": "What keyword2?"
+                  }
+                }
+              }
+            ],
+            "maxRetries": 1,
+            "allowInterrupt": true,
+            "messageSelectionStrategy": "Random",
+            "promptAttemptsSpecification": {
+              "Initial": {
+                "allowInterrupt": true,
+                "allowedInputTypes": {
+                  "allowAudioInput": true,
+                  "allowDTMFInput": true
+                },
+                "audioAndDTMFInputSpecification": {
+                  "startTimeoutMs": 4000,
+                  "audioSpecification": {
+                    "maxLengthMs": 15000,
+                    "endTimeoutMs": 640
+                  },
+                  "dtmfSpecification": {
+                    "maxLength": 513,
+                    "endTimeoutMs": 5000,
+                    "deletionCharacter": "*",
+                    "endCharacter": "#"
+                  }
+                },
+                "textInputSpecification": {
+                  "startTimeoutMs": 30000
+                }
+              },
+              "Retry1": {
+                "allowInterrupt": true,
+                "allowedInputTypes": {
+                  "allowAudioInput": true,
+                  "allowDTMFInput": true
+                },
+                "audioAndDTMFInputSpecification": {
+                  "startTimeoutMs": 4000,
+                  "audioSpecification": {
+                    "maxLengthMs": 15000,
+                    "endTimeoutMs": 640
+                  },
+                  "dtmfSpecification": {
+                    "maxLength": 513,
+                    "endTimeoutMs": 5000,
+                    "deletionCharacter": "*",
+                    "endCharacter": "#"
+                  }
+                },
+                "textInputSpecification": {
+                  "startTimeoutMs": 30000
+                }
+              }
+            }
+          },
+          "slotCaptureSetting": {
+            "elicitationCodeHook": {
+              "enableCodeHookInvocation": true
+            }
+          }
+        },
+        "botId": "T4DPQ3XVUE",
+        "botVersion": "DRAFT",
+        "localeId": "en_US",
+        "intentId": "JSTOQUCRS6",
+        "creationDateTime": "2026-04-26 18:57:09.674000-04:00",
+        "lastUpdatedDateTime": "2026-04-26 18:57:09.674000-04:00"
+      },
+      {
+        "ResponseMetadata": {
+          "RequestId": "61d3f084-af06-482a-abb0-47da402be1b3",
+          "HTTPStatusCode": 200,
+          "HTTPHeaders": {
+            "date": "Mon, 27 Apr 2026 21:31:50 GMT",
+            "content-type": "application/x-amz-json-1.1",
+            "content-length": "1756",
+            "connection": "keep-alive",
+            "x-amzn-requestid": "61d3f084-af06-482a-abb0-47da402be1b3",
+            "strict-transport-security": "max-age=31536000; includeSubDomains",
+            "x-amz-apigw-id": "cf5XIHK_oAMEH4A=",
+            "x-content-type-options": "nosniff",
+            "x-amzn-trace-id": "Root=1-69efd5c6-348a06da32757d5212f25969"
+          },
+          "RetryAttempts": 0
+        },
+        "slotId": "PYCQYFV3EL",
+        "slotName": "keyword1",
+        "slotTypeId": "AMAZON.AlphaNumeric",
+        "valueElicitationSetting": {
+          "slotConstraint": "Optional",
+          "promptSpecification": {
+            "messageGroups": [
+              {
+                "message": {
+                  "plainTextMessage": {
+                    "value": "What keyword1?"
+                  }
+                }
+              }
+            ],
+            "maxRetries": 1,
+            "allowInterrupt": true,
+            "messageSelectionStrategy": "Random",
+            "promptAttemptsSpecification": {
+              "Initial": {
+                "allowInterrupt": true,
+                "allowedInputTypes": {
+                  "allowAudioInput": true,
+                  "allowDTMFInput": true
+                },
+                "audioAndDTMFInputSpecification": {
+                  "startTimeoutMs": 4000,
+                  "audioSpecification": {
+                    "maxLengthMs": 15000,
+                    "endTimeoutMs": 640
+                  },
+                  "dtmfSpecification": {
+                    "maxLength": 513,
+                    "endTimeoutMs": 5000,
+                    "deletionCharacter": "*",
+                    "endCharacter": "#"
+                  }
+                },
+                "textInputSpecification": {
+                  "startTimeoutMs": 30000
+                }
+              },
+              "Retry1": {
+                "allowInterrupt": true,
+                "allowedInputTypes": {
+                  "allowAudioInput": true,
+                  "allowDTMFInput": true
+                },
+                "audioAndDTMFInputSpecification": {
+                  "startTimeoutMs": 4000,
+                  "audioSpecification": {
+                    "maxLengthMs": 15000,
+                    "endTimeoutMs": 640
+                  },
+                  "dtmfSpecification": {
+                    "maxLength": 513,
+                    "endTimeoutMs": 5000,
+                    "deletionCharacter": "*",
+                    "endCharacter": "#"
+                  }
+                },
+                "textInputSpecification": {
+                  "startTimeoutMs": 30000
+                }
+              }
+            }
+          },
+          "slotCaptureSetting": {
+            "elicitationCodeHook": {
+              "enableCodeHookInvocation": true
+            }
+          }
+        },
+        "botId": "T4DPQ3XVUE",
+        "botVersion": "DRAFT",
+        "localeId": "en_US",
+        "intentId": "JSTOQUCRS6",
+        "creationDateTime": "2026-04-26 18:57:09.464000-04:00",
+        "lastUpdatedDateTime": "2026-04-26 18:57:09.464000-04:00"
+      }
+    ]
+  },
+  "alias": {
+    "ResponseMetadata": {
+      "RequestId": "f147405b-3b3d-48a6-89ab-824b0e054739",
+      "HTTPStatusCode": 200,
+      "HTTPHeaders": {
+        "date": "Mon, 27 Apr 2026 21:31:50 GMT",
+        "content-type": "application/x-amz-json-1.1",
+        "content-length": "550",
+        "connection": "keep-alive",
+        "x-amzn-requestid": "f147405b-3b3d-48a6-89ab-824b0e054739",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "x-amz-apigw-id": "cf5XCF_zoAMEIOQ=",
+        "x-content-type-options": "nosniff",
+        "x-amzn-trace-id": "Root=1-69efd5c6-09e3205775d2a6cf22f1070a"
+      },
+      "RetryAttempts": 0
+    },
+    "botAliasId": "UJABDDPGRP",
+    "botAliasName": "prod",
+    "botVersion": "1",
+    "botAliasLocaleSettings": {
+      "en_US": {
+        "enabled": true
+      }
+    },
+    "botAliasHistoryEvents": [
+      {
+        "botVersion": "1",
+        "startDate": "2026-04-26 18:58:57.143000-04:00"
+      }
+    ],
+    "botAliasStatus": "Available",
+    "botId": "T4DPQ3XVUE",
+    "creationDateTime": "2026-04-26 18:58:57.143000-04:00",
+    "lastUpdatedDateTime": "2026-04-26 18:58:57.170000-04:00"
+  }
+}
