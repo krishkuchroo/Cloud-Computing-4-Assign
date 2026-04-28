@@ -4,8 +4,6 @@ NYU Cloud Computing Spring 2026, Assignment 3.
 
 A photo album where users upload images (with optional custom labels) and search them using natural English. Rekognition auto-tags each upload, Lex parses search queries into keywords, and OpenSearch returns matching photos.
 
-- Test for codepipeline
-
 ## Architecture
 
 ```
